@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bd8a24b7-0df4-4fcf-b62c-194be84059f1",
+    "product_name": "Black Nazi",
+    "color": "Black",
+    "price": "$25",
+    "image_path": "/shirts/black.webp",
+    "type": "shirt"
+  },
+  {
+    "id": "0b9a9ebe-8f0b-4a8f-a2f3-6af6e062bfcd",
+    "product_name": "White Nazi",
+    "color": "White",
+    "price": "$25",
+    "image_path": "/shirts/optic_white.webp",
+    "type": "shirt"
+  },
+  {
+    "id": "783b9f91-aa88-41f1-bd13-bf0c76869c9d",
+    "product_name": "Pinkish Nazi",
+    "color": "Powder Pink",
+    "price": "$25",
+    "image_path": "/shirts/powder_pink.webp",
+    "type": "shirt"
+  },
+  {
+    "id": "1ed651d1-42d7-4cb0-b02a-f39ae9c2a50a",
+    "product_name": "White Sleve Nazi",
+    "color": "White",
+    "price": "$35",
+    "image_path": "/shirts/long_sleve_white.webp",
+    "type": "sleeve"
+  },
+  {
+    "id": "84de8f47-95a3-4d1c-9d22-197f934e22c1",
+    "product_name": "Black Sleve Nazi",
+    "color": "Black",
+    "price": "$35",
+    "image_path": "/shirts/long_sleve_black.jpg",
+    "type": "sleeve"
+  }
+]
