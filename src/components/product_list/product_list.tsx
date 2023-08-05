@@ -1,8 +1,9 @@
-import { addProduct } from "../../lib";
+import { addProductToCart } from "../../libs/cartHandler";
 import { Product } from "../../type";
+import { useState } from "react";
 function ProductList(product: Product) {
   const cartClicked = () => {
-    addProduct(product);
+    addProductToCart(product, () => {});
   };
   return (
     <div className="w-full h-full max-w flex flex-auto flex-col cursor-pointer">
@@ -16,7 +17,7 @@ function ProductList(product: Product) {
         </div>
         <div className="flex justify-between w-full items-center px-1 py-2">
           <div>
-            <div className="text-sm capitalize">{product.product_name}</div>
+            <div className="text-base capitalize">{product.product_name}</div>
             <div className="text-sm text-gray-500 capitalize">
               {product.type}
             </div>
@@ -29,6 +30,7 @@ function ProductList(product: Product) {
         className="text-sm w-100 duration-200  text-center py-2 border-2 border-gray-50 hover:text-gray-900 hover:bg-white rounded"
       >
         Add to cart
+        {/* <span className="">Done</span> */}
       </div>
     </div>
   );

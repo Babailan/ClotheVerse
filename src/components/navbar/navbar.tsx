@@ -1,8 +1,23 @@
 import { useRouter } from "next/router";
 import NavbarLi from "./sub-component/li";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 function Navbar() {
   const router = useRouter();
+  const [cartLength, setCartLength] = useState(0);
+  useEffect(() => {
+    console.log("HELLO WORLD");
+    const requestDB = indexedDB.open("main", 1);
+    requestDB.onsuccess = () => {
+      const transaction = requestDB.result.transaction("cart", "readonly");
+      const cart = transaction.objectStore("cart");
+      const count = cart.count();
+      transaction.oncomplete = () => {
+        setCartLength(count.result);
+        requestDB.result.close();
+      };
+    };
+  });
   return (
     <div className="flex justify-between">
       <div className="flex">
@@ -49,7 +64,7 @@ function Navbar() {
           <span className="material-symbols-outlined text-3xl mr-1">
             shopping_cart
           </span>
-          <span className="text-sm">Cart</span>
+          <span className="text-sm">Cart {cartLength != 0 && cartLength}</span>
         </div>
       </div>
     </div>
