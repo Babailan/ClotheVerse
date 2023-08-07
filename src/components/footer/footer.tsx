@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 function Footer() {
   function Social_Media() {
     return (
@@ -73,18 +75,19 @@ function Footer() {
     );
   }
   function About_Panel() {
+    const router = useRouter();
+
     return (
       <div className="flex flex-1 gap-10 py-10 text-sm justify-start sm:justify-evenly">
         <div>
           <div className="mb-5">Support</div>
           <div className="flex flex-col gap-2">
             <span>
-              <a className="text-gray-400 cursor-pointer inline hover:text-white">
-                Donate Me
-              </a>
-            </span>
-            <span>
-              <a className="text-gray-400 cursor-pointer inline hover:text-white">
+              <a
+                className="text-gray-400 cursor-pointer inline hover:text-white"
+                href="https://github.com/Babailan/ClotheVerse"
+                target="_blank"
+              >
                 Repository
               </a>
             </span>
@@ -93,16 +96,22 @@ function Footer() {
         <div>
           <div className="mb-5">Project</div>
           <div className="flex flex-col gap-2">
-            <span>
-              <a className="text-gray-400 cursor-pointer hover:text-white">
-                About
-              </a>
-            </span>
-            <span>
-              <a className="text-gray-400 cursor-pointer hover:text-white">
-                Disclaimer
-              </a>
-            </span>
+            <div
+              className="text-gray-400 cursor-pointer hover:text-white"
+              onClick={() => {
+                router.push("/about");
+              }}
+            >
+              About
+            </div>
+            <div
+              className="text-gray-400 cursor-pointer hover:text-white"
+              onClick={() => {
+                router.push("/disclaimer");
+              }}
+            >
+              Disclaimer
+            </div>
           </div>
         </div>
       </div>

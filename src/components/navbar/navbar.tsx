@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { NavbarLiDesktop, NavbarLiMobile } from "./sub-component/li";
+import BottomLine from "../line/bottomline";
+import { useRouter } from "next/router";
+
 function Navbar({ cartItem }) {
   const [checkMobileMenus, setMobileMenu] = useState(false);
+  const router = useRouter();
   const liDesktop = (
     <div className="tracking-wider sm:flex gap-5 hidden">
       <NavbarLiDesktop route={"/"}>Explore</NavbarLiDesktop>
-      <NavbarLiDesktop route={"/apparel"}>Apparel</NavbarLiDesktop>
       <NavbarLiDesktop route={"/disclaimer"}>Disclaimer</NavbarLiDesktop>
     </div>
   );
@@ -22,11 +25,11 @@ function Navbar({ cartItem }) {
       </NavbarLiMobile>
     </div>
   );
-  const line = (
-    <div className="h-px w-full left-0 bg-gray-700 absolute bottom-0"></div>
-  );
   const cart = (
-    <div className="group flex duration-100 items-center border-2 px-3 py-1 sm:py-2 rounded-md cursor-pointer hover:text-slate-900 hover:bg-white gap-1">
+    <div
+      onClick={() => router.push("/cart")}
+      className="group flex duration-100 items-center border-2 px-3 py-1 sm:py-2 rounded-md cursor-pointer hover:text-slate-900 hover:bg-white gap-1"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         enableBackground="new 0 0 24 24"
@@ -52,6 +55,7 @@ function Navbar({ cartItem }) {
       width={50}
       height={50}
       className="cursor-pointer"
+      onClick={() => router.push("/")}
     ></img>
   );
   const menuMobileIcon = !checkMobileMenus ? (
@@ -94,7 +98,7 @@ function Navbar({ cartItem }) {
         <div className="flex items-center gap-5">{cart}</div>
       </div>
       {checkMobileMenus && liMobile}
-      {line}
+      <BottomLine />
     </div>
   );
 }

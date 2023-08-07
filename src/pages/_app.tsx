@@ -20,8 +20,13 @@ function App({ Component, pageProps }) {
     <>
       <main className="min-h-screen text-gray-50 bg-zinc-900 font-sans">
         <Navbar cartItem={cartItem} />
-        <div className="p-5 sm:p-10 bg-zinc-800">
-          <Component {...pageProps} setCartItem={setCartItem}></Component>
+
+        <div className="p-3 sm:p-10 bg-zinc-800">
+          <Component
+            {...pageProps}
+            cartItem={cartItem}
+            setCartItem={setCartItem}
+          ></Component>
         </div>
         <Footer />
       </main>

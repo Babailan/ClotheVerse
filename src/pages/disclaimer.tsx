@@ -1,7 +1,7 @@
 function Page() {
   return (
     <div className="flex items-center w-100 justify-center">
-      <article className="prose prose-invert py-10 text-justify">
+      <article className="prose prose-invert py-10 text-justify max-w-[720px]">
         <h1 className="text-start">Disclaimer and Licensing Information</h1>
         <p>
           The content and features provided in this project are intended for

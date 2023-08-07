@@ -1,6 +1,6 @@
-import { Product } from "../../type";
+import { Product, ProductData } from "../../type";
 
-function addProductToCart(item: Product) {
+function addProductToCart(item: ProductData) {
   return new Promise<string>((resolve, reject) => {
     const dbOpenRequest = indexedDB.open("main", 1);
 
@@ -12,9 +12,18 @@ function addProductToCart(item: Product) {
       const db = dbOpenRequest.result;
       const transaction = db.transaction("cart", "readwrite");
       const cartStore = transaction.objectStore("cart");
+      item.order = 1;
+      item.date = Date.now();
       cartStore.add(item);
       transaction.onerror = (e: Event) => {
         const request = e.target as IDBRequest;
+        if (
+          request.error.message == "Key already exists in the object store."
+        ) {
+          resolve("transaction complete");
+          db.close();
+          return;
+        }
         reject(request.error);
         db.close();
       };
