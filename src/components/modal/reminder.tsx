@@ -1,6 +1,6 @@
 function Reminder({ onClick }) {
   return (
-    <div className="fixed bg-zinc-950 z-10 bottom-0 p-3 sm:p-3 sm:gap-2 rounded-md sm:bottom-[50%] sm:translate-x-[-50%] sm:translate-y-[50%] sm:left-[50%] box-border m-3 flex flex-col sm:w-[500px] sm:flex-row">
+    <div className="fixed bg-zinc-950 z-10 bottom-0 left-0 p-3 sm:gap-2 rounded-md sm:bottom-[50%] sm:translate-x-[-50%] sm:translate-y-[50%] sm:left-[50%] box-border m-1 flex flex-col sm:w-[500px] sm:flex-row">
       <div className="m-auto sm:m-0 p-2 bg-slate-800 h-fit rounded-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
