@@ -23,7 +23,7 @@ function ProductList({ product, setCartItem }: ProductListProps) {
     });
   };
   return (
-    <div className="w-full h-full max-w flex flex-auto flex-col cursor-pointer">
+    <div className="w-full h-full max-w flex flex-auto flex-col">
       <div className="flex flex-col group">
         <div className="h-full items-center flex group-hover:opacity-80 duration-200">
           <img
@@ -44,7 +44,7 @@ function ProductList({ product, setCartItem }: ProductListProps) {
       </div>
       <div
         onClick={cartClicked}
-        className="relative flex justify-center items-center group text-sm w-100 duration-200  text-center py-2 border-2 border-gray-50 hover:text-gray-900 hover:bg-white rounded"
+        className="relative cursor-pointer flex justify-center items-center group text-sm w-100 duration-200  text-center py-2 border-2 border-gray-50 hover:text-gray-900 hover:bg-white rounded"
       >
         Add to cart
         {clicked && (
