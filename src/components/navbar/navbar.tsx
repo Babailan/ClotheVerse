@@ -17,9 +17,6 @@ function Navbar({ cartItem }) {
       <NavbarLiMobile setMenu={setMobileMenu} route={"/"}>
         Explore
       </NavbarLiMobile>
-      <NavbarLiMobile setMenu={setMobileMenu} route={"/apparel"}>
-        Apparel
-      </NavbarLiMobile>
       <NavbarLiMobile setMenu={setMobileMenu} route={"/disclaimer"}>
         Disclaimer
       </NavbarLiMobile>
